@@ -1,4 +1,4 @@
-> 通过前36关啦！
+> 通过前41关啦！
 
 # 关于Git的一点笔记
 
@@ -44,4 +44,17 @@
 
 #### 基于某次提交新建分支
     git branch new_branch HASHID
+
+#### 向远端推送特定分支
+    git push origin test_branch
+    
+#### 从远端拉取提交，但不与本地merge
+    git fetch origin...
+    
+#### 将一个分支变基到master
+    git rebase master feature
+    
+#### 优化打包，删除不必要的包
+    git repack -d
+    
 

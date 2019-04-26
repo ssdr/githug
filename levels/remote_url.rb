@@ -1,6 +1,6 @@
 difficulty 2
 
-description "The remote repositories have a url associated to them.  Please enter the url of remote_location."
+description "The remote repositories have a url associated to them. Please enter the url of remote_location."
 
 setup do
   repo.init
@@ -9,7 +9,7 @@ setup do
 end
 
 solution do
-  "https://github.com/githug/not_a_repo" == request("What is the url of the remote repository?")
+  !!(request("What is the url of the remote repository?") =~ /https:\/\/github.com\/githug\/not_a_repo\/?/)
 end
 
 hint do

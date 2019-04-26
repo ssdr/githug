@@ -38,9 +38,9 @@ module Githug
       LEVEL parameter which will reset the game to a specific level. For
       example:
 
-      > $ githug reset merge_squash
+      > $ githug reset merge_squash   # or $ githug reset 47
 
-      Will reset githug to level '#45: merge_squash'
+      Will reset githug to level '#47: merge_squash'
     LONGDESC
     def reset(path = nil)
       level = load_level(path)
@@ -67,8 +67,14 @@ module Githug
 
       def load_level(path = nil)
         return load_level_from_profile unless path
+        return load_level_from_number(path.to_i) if path.to_i.to_s == path
         return load_level_from_name(path) if Level.list.include?(path)
         Level.load_from_file(path)
+      end
+
+      def load_level_from_number(number)
+        level_name = number >= 1 ? Level.list[number - 1] : nil
+        return load_level_from_name(level_name)
       end
 
       def load_level_from_name(name)

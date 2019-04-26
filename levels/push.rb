@@ -1,6 +1,6 @@
 difficulty 3
 description "Your local master branch has diverged from " +
-  "the remote origin/master branch. Rebase your commit onto " +
+  "the remote origin/master branch. Rebase your branch onto " +
   "origin/master and push it to remote."
 
 setup do
@@ -21,7 +21,9 @@ setup do
   repo.commit_all "Second commit"
 
   # copy the repo to remote
-  FileUtils.cp_r ".", tmpdir
+  FileUtils.cp "file1", tmpdir
+  FileUtils.cp "file2", tmpdir
+
   # add another file
   FileUtils.touch "file3"
   repo.add        "file3"

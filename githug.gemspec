@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Githug::VERSION
   s.authors     = ["Gary Rennie"]
   s.email       = ["webmaster@gazler.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/Gazler/githug"
   s.summary     = %q{An interactive way to learn git.}
   s.description = %q{An interactive way to learn git.}
 
@@ -23,6 +23,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency "grit", "~>2.3.0"
   s.add_dependency "thor", "~>0.14.6"
-  s.add_dependency "rake"
-  # s.add_runtime_dependency "rest-client"
+  s.add_dependency "rake", "<11"
 end

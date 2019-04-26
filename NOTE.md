@@ -14,8 +14,14 @@
     git stash list
     git stash apply
     
-#### 推送特定tag到远端
-    git push origin tag_to_be_pushed
+#### tag
+    git tag -l
+    git tag new_tag
+    git tag -d new_tag
+    
+#### push
+    git push origin tag_to_be_pushed 推送特定tag到远端
+    git push --tags 推送所有tags到远端
     
 #### 指定提交的日期时间
     git commit --date "Thu Dec 31 13:34:03 2016 +0800" -m "xxx"
@@ -28,6 +34,7 @@
     删除本地修改
     git reset --hard HEAD
     git checkout HEAD
+    git checkout -- <file>
 
 #### 不产生新提交拉取远程代码
     git rebase origin/master(no new commit)
